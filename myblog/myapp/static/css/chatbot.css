@@ -1,0 +1,120 @@
+/* Chatbot Page Styling */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f5faff;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll bar */
+}
+
+/* Only applies margin/padding to main content, not the nav */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 15px; /* Adds space between navbar and chat area */
+}
+
+/* Chat container box */
+.chat-container {
+    width: 100%;
+    max-width: 600px;
+    height: 400px; /* Fixed height to make it scrollable */
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(21, 101, 192, 0.2);
+    overflow-y: auto;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Chat message bubbles */
+.message {
+    margin-bottom: 15px;
+    padding: 12px 16px;
+    border-radius: 15px;
+    max-width: 80%;
+    line-height: 1.5;
+    font-size: 1rem;
+    word-wrap: break-word;
+}
+
+.message strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Alternate message bubble styling */
+.bot-message {
+    background-color: #bbdefb;
+    color: #0d47a1;
+    align-self: flex-start;
+}
+
+/* User message: right aligned */
+.user-message {
+    background-color: #90caf9;
+    color: #0d47a1;
+    align-self: flex-end;
+}
+
+/* Chat form layout */
+#chat-form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Input box styling */
+#user-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #1565c0;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Input focus effect */
+#user-input:focus {
+    background-color: #bbdefb;
+}
+
+/* Submit button */
+#chat-form button {
+    padding: 12px 20px;
+    background-color: #1565c0;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#chat-form button:hover {
+    background-color: #0d47a1;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Apply animation to everything */
+* {
+  animation: fadeIn 0.7s ease-in-out;
+}

@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/form.css' %}" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">Welcome to Totorean Andrei's Blog</div>
+        <button class="toggle-button" id="menu-toggle">&#9776;</button>
+        <div class="nav-links" id="nav-links">
+          <a href="{% url 'index' %}">Index</a>
+          <a href="{% url 'about' %}">About</a>
+          <div class="dropdown">
+            <a href="#">Pages ▼</a>
+            <div class="dropdown-content">
+              <a href="{% url 'form' %}">Form</a>
+              <a href="{% url 'gallery' %}">Gallery</a>
+              <a href="{% url 'chatbot' %}">Chatbot</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="form-container">
+      <h1>Submit Your Information</h1>
+      <form
+        onsubmit="return validateForm()"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        {% csrf_token %}
+
+        <div class="form-block">
+          <label class="formInfo">Salutations</label>
+          <select name="salutation">
+            <option>--NONE--</option>
+            <option>Mr.</option>
+            <option>Ms.</option>
+            <option>Mrs.</option>
+            <option>Dr.</option>
+            <option>Prof.</option>
+          </select>
+        </div>
+
+        <div class="form-block">
+          <label class="formInfo">First Name</label>
+          <input name="firstName" required />
+        </div>
+
+        <div class="form-block">
+          <label class="formInfo">Last Name</label>
+          <input name="lastName" required />
+        </div>
+
+        <div class="form-block">
+          <label class="formInfo">Gender</label>
+          <label><input type="radio" name="gender" value="male" /> Male</label>
+          <label
+            ><input type="radio" name="gender" value="female" /> Female</label
+          >
+          <label
+            ><input type="radio" name="gender" value="other" /> Other</label
+          >
+        </div>
+
+        <div class="form-block">
+          <label class="formInfo">Email</label>
+          <input type="email" name="email" required />
+        </div>
+
+        <div class="form-block">
+          <label class="formInfo">Date of Birth</label>
+          <input type="date" name="birthDate" />
+        </div>
+
+        <div class="form-block">
+          <label class="formInfo">Address</label>
+          <textarea name="address" rows="3"></textarea>
+        </div>
+
+        <div class="form-block">
+          <label class="formInfo">Interests</label>
+          <label
+            ><input type="radio" name="interest" value="sports" /> Sports</label
+          ><br />
+          <label
+            ><input type="radio" name="interest" value="music" /> Music</label
+          ><br />
+          <label
+            ><input type="radio" name="interest" value="movies" /> Movies</label
+          ><br />
+        </div>
+
+        <div class="form-block">
+          <label class="formInfo">Profile Picture</label>
+          <input type="file" name="profile_picture" />
+        </div>
+
+        <div class="form-block">
+          <label class="formInfo">Upload CV (PDF only)</label>
+          <input type="file" name="cv" accept="application/pdf" />
+        </div>
+
+        <div class="form-block">
+          <label class="formInfo">Communication Preferences</label>
+          <label
+            ><input type="radio" name="com_type" value="email" /> Email</label
+          ><br />
+          <label><input type="radio" name="com_type" value="sms" /> SMS</label
+          ><br />
+        </div>
+
+        <div class="form-block">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <script defer src="{% static 'js/form.js' %}"></script>
+  </body>
+</html>

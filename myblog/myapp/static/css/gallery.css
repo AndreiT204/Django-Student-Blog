@@ -1,0 +1,124 @@
+/* Gallery Page */
+
+body {
+  background-color: #f5faff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #0d47a1;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* normal flow - no flex here */
+}
+
+/* Container for the slider, centers only the slider */
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px); /* full viewport height minus navbar approx height */
+  margin-top: 20px;
+}
+
+.slider {
+  position: relative;
+  width: 400px;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(21, 101, 192, 0.2);
+  background-color: white;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  animation: fadeIn 1.5s ease;
+}
+
+.slides img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(21, 101, 192, 0.8);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  z-index: 10;
+}
+
+button:hover {
+  background-color: #0d47a1;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.imageContainer {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.blogText {
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.blogInfo {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #1565c0;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+}
+
+.box:hover {
+  background-color: #1e88e5;
+}
+
+a:hover {
+  font-size: 1.8rem;
+  color: #1e88e5;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Apply animation to everything */
+* {
+  animation: fadeIn 0.7s ease-in-out;
+}

@@ -1,0 +1,100 @@
+/* Navigation Bar */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    background-color: #1565c0;
+    padding: 10px 20px;
+    box-shadow: 0 2px 6px rgba(21, 101, 192, 0.5);
+    justify-content: space-between;
+    position: relative;
+    width: 100%;       
+    max-width: 100%;    
+    box-sizing: border-box;
+}
+
+/* Logo on the left, takes only the needed space */
+nav .logo {
+    color: #000; /* bright yellow */
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-align: left;
+    user-select: none;
+}
+
+/* Container for nav links aligned right */
+nav .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    justify-content: flex-end;
+}
+
+/* All nav links style */
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for nav links */
+nav a:hover {
+    font-size: 1.2rem; /* keep same size as normal */
+    color: #bbdefb;    /* your existing hover color */
+    text-decoration: none; /* prevent underline */
+}
+
+/* Dropdown parent */
+nav .dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Hide dropdown content by default */
+nav .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    right: 0;
+    top: 100%;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    z-index: 10;
+}
+
+/* Show dropdown on hover */
+nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown links */
+nav .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: normal;
+}
+
+/* Hover effect for dropdown links */
+nav .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.toggle-button {
+    display: none !important;
+}

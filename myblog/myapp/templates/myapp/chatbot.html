@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/navbar.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/chatbot.css' %}"
+    />
+    <script defer src="{% static 'js/chatbot.js' %}"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">Welcome to Totorean Andrei's Blog</div>
+        <button class="toggle-button" id="menu-toggle">&#9776;</button>
+        <div class="nav-links" id="nav-links">
+          <a href="{% url 'index' %}">Index</a>
+          <a href="{% url 'about' %}">About</a>
+          <div class="dropdown">
+            <a href="#">Pages ▼</a>
+            <div class="dropdown-content">
+              <a href="{% url 'form' %}">Form</a>
+              <a href="{% url 'gallery' %}">Gallery</a>
+              <a href="{% url 'chatbot' %}">Chatbot</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ✅ Centering wrapper -->
+    <div class="main-content">
+      <div class="chat-container" id="chat-container"></div>
+      <form id="chat-form">
+        <input type="text" id="user-input" placeholder="Answer Here..." />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </body>
+</html>
