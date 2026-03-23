@@ -53,7 +53,7 @@ Visitors can interact with the blog posts through a full CRUD (Create, Read, Upd
 ## Live Demo
 
 Check out the live deployment of this blog on Vercel:
-[Live Application](https://your-vercel-link.vercel.app)
+[Live Application]([https://your-vercel-link.vercel.app](https://django-student-blog.vercel.app/))
 
 ---
 
@@ -75,7 +75,7 @@ Start the Django development server from the project root directory:
 python manage.py runserver
 ```
 
-###3. View the Frontend
+### 3. View the Frontend
 
 Navigate to your local host address in your web browser:
 
