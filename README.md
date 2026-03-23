@@ -53,7 +53,7 @@ Visitors can interact with the blog posts through a full CRUD (Create, Read, Upd
 ## Live Demo
 
 Check out the live deployment of this blog on Vercel:
-[Live Application]([https://your-vercel-link.vercel.app](https://django-student-blog.vercel.app/))
+[Live Application](https://django-student-blog.vercel.app/)
 
 ---
 
